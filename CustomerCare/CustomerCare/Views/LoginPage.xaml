@@ -3,12 +3,44 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CustomerCare.Views.LoginPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" 
-                   x:Name="WelcomeText"/>
-            <Button x:Name="LoginButton" />
-        </StackLayout>
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" RowSpacing="0">
+            <Image Source="screen.png" Aspect="AspectFill" />
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" 
+                  VerticalOptions="CenterAndExpand" 
+                  HorizontalOptions="FillAndExpand" 
+                  RowSpacing="0"
+                  Padding="20">
+                <Frame CornerRadius="10" 
+                       BackgroundColor="Black" 
+                       Padding="10"
+                       HorizontalOptions="FillAndExpand"
+                       Opacity="0.85">
+                    <StackLayout>
+                        <Label Text="Bem-Vindos ao Customer Care" 
+                               VerticalOptions="Center" 
+                               HorizontalOptions="FillAndExpand"
+                               FontSize="Medium"
+                               FontAttributes="Bold"
+                               TextColor="White" />
+                        <Frame CornerRadius="10" 
+                               BackgroundColor="#f0f0f0" 
+                               Padding="10" 
+                               Opacity="0.85"
+                               HorizontalOptions="FillAndExpand">
+                            <StackLayout Spacing="30">
+                                <Button BackgroundColor="#1ab394"
+                                        TextColor="White"
+                                        Text="Entrar"
+                                        HorizontalOptions="CenterAndExpand"
+                                        Command="{Binding LoginCommand}" />
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
