@@ -13,7 +13,7 @@ namespace CustomerCare.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LoginPage : ContentPage
     {
-        public IPlatformParameters PlatformParameters { get; set; }
+        private AuthenticationResult ar;
 
         public LoginPage ()
 		{
@@ -22,9 +22,21 @@ namespace CustomerCare.Views
             LoginButton.Clicked += LoginButton_Clicked;
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
-            App.ClientApplication.PlatformParameters = PlatformParameters;
+
+            try
+            {
+                AuthenticationResult ar =
+                        await App.PCA.AcquireTokenSilentAsync(App.Scopes, App.PCA.Users.FirstOrDefault());
+
+                WelcomeText.Text = $"Welcome {ar.User.Name}";
+            }
+            catch
+            {
+
+            }
+
             base.OnAppearing();
         }
 
@@ -32,8 +44,12 @@ namespace CustomerCare.Views
         {
             try
             {
-                AuthenticationResult ar = await App.ClientApplication.AcquireTokenAsync(App.Scopes);
+                AuthenticationResult ar = await App.PCA.AcquireTokenAsync(App.Scopes, App.UiParent);
+
+                var name = ar.User.Name;
+
                 WelcomeText.Text = $"Welcome {ar.User.Name}";
+
             }
             catch (MsalException ex)
             {

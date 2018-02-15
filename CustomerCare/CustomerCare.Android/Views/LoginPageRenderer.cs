@@ -30,7 +30,6 @@ namespace CustomerCare.Droid.Views
             base.OnElementChanged(e);
             _page = e.NewElement as LoginPage;
             var activity = this.Context as Activity;
-            _page.PlatformParameters = new PlatformParameters(activity);
         }
     }
 }

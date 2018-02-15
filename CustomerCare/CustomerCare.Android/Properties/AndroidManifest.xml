@@ -2,5 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.CustomerCare" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="22" android:targetSdkVersion="26" />
 	<uses-permission android:name="android.permission.INTERNET" />
-	<application android:label="CustomerCare.Android"></application>
+	<application android:label="CustomerCare.Android">
+    <activity android:name="microsoft.identity.client.BrowserTabActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+        <data android:scheme="msal105c8c48-4977-4c63-974e-82424cb3539c" android:host="auth" />
+      </intent-filter>
+    </activity>
+  </application>
 </manifest>

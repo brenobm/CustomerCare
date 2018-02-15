@@ -15,14 +15,35 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\BehaviorBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\EventToCommandBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Config\IConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\NullableDatePicker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ValidableDatePicker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ValidableEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ValidablePicker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\DecimalConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\IntegerConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\ItemTappedCnverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\IMessageService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MessageService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\RESTHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Item.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\MockDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\AzureDataStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Validations\IsDecimalRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Validations\IsNonZeroSelectedRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Validations\IsNotNullOrEmptyRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Validations\IValidationRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Validations\IValidity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Validations\ValidatableObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AboutViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ItemDetailViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ItemsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\IValidableViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ViewModelBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
       <SubType>Code</SubType>

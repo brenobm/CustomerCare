@@ -25,7 +25,7 @@ namespace CustomerCare.iOS
             global::Xamarin.Forms.Forms.Init();
             Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
             LoadApplication(new App());
-
+            App.PCA.RedirectUri = "msal105c8c48-4977-4c63-974e-82424cb3539c://auth";
             return base.FinishedLaunching(app, options);
         }
     }

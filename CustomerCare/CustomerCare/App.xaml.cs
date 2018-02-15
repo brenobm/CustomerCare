@@ -12,8 +12,19 @@ namespace CustomerCare
 		public static bool UseMockDataStore = true;
 		public static string AzureMobileAppUrl = "https://[CONFIGURE-THIS-URL].azurewebsites.net";
 
-        public static PublicClientApplication ClientApplication { get; set; }
-        public static string[] Scopes = { "User.Read" };
+        public static PublicClientApplication PCA = null;
+        public static string ClientID = "105c8c48-4977-4c63-974e-82424cb3539c";
+        public static string[] Scopes = {
+            "User.Read",
+            "Calendars.Read", "Calendars.Read.Shared",
+            "Calendars.ReadWrite", "Calendars.ReadWrite.Shared",
+            "Contacts.Read", "Contacts.Read.Shared",
+            "Contacts.ReadWrite", "Contacts.ReadWrite.Shared"
+        };
+
+        public static string Username = string.Empty;
+
+        public static UIParent UiParent = null;
 
         public App ()
 		{
@@ -24,7 +35,7 @@ namespace CustomerCare
 			else
 				DependencyService.Register<AzureDataStore>();
 
-            ClientApplication = new PublicClientApplication("105c8c48-4977-4c63-974e-82424cb3539c");
+            PCA = new PublicClientApplication(ClientID);
 
             MainPage = new LoginPage();
         }

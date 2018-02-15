@@ -21,7 +21,6 @@ namespace CustomerCare.iOS.Views
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            _page.PlatformParameters = new PlatformParameters(this);
         }
     }
 }

@@ -46,10 +46,16 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Identity.Client">
-      <Version>1.0.303282006-alpha</Version>
+      <Version>1.1.2-preview0008</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory">
       <Version>3.19.1</Version>
+    </PackageReference>
+    <PackageReference Include="sqlite-net-pcl">
+      <Version>1.4.118</Version>
+    </PackageReference>
+    <PackageReference Include="SQLite.Net-PCL">
+      <Version>3.1.1</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.CustomTabs">
       <Version>26.1.0.1</Version>
@@ -64,6 +70,11 @@
     <PackageReference Include="Microsoft.Azure.Mobile.Client.SQLiteStore" Version="4.0.2" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config\Config.cs" />
+    <Compile Include="Controls\NullableDatePickerRenderer.cs" />
+    <Compile Include="Controls\ValidableDatePickerRenderer.cs" />
+    <Compile Include="Controls\ValidableEntryRenderer.cs" />
+    <Compile Include="Controls\ValidablePickerRenderer.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,6 +103,7 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\xamarin_logo.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="..\CustomerCare\CustomerCare.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
