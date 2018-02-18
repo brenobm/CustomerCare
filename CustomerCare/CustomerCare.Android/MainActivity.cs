@@ -1,13 +1,9 @@
-﻿using System;
-
-using Android.App;
+﻿using Android.App;
+using Android.Content;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
 using Microsoft.Identity.Client;
-using Android.Content;
+using System;
 
 namespace CustomerCare.Droid
 {
@@ -16,18 +12,24 @@ namespace CustomerCare.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
-            TabLayoutResource = Resource.Layout.Tabbar;
-            ToolbarResource = Resource.Layout.Toolbar;
+            try
+            {
+                TabLayoutResource = Resource.Layout.Tabbar;
+                ToolbarResource = Resource.Layout.Toolbar;
 
-            base.OnCreate(bundle);
+                base.OnCreate(bundle);
 
-            global::Xamarin.Forms.Forms.Init(this, bundle);
-            Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
-            LoadApplication(new App());
+                global::Xamarin.Forms.Forms.Init(this, bundle);
+                LoadApplication(new App());
 
 
-            App.PCA.RedirectUri = "msal105c8c48-4977-4c63-974e-82424cb3539c://auth";
-            App.UiParent = new UIParent(Xamarin.Forms.Forms.Context as Activity);
+                App.PCA.RedirectUri = "msal105c8c48-4977-4c63-974e-82424cb3539c://auth";
+                App.UiParent = new UIParent(Xamarin.Forms.Forms.Context as Activity);
+            }
+            catch(Exception e)
+            {
+                ///
+            }
         }
 
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)

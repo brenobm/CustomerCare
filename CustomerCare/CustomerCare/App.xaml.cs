@@ -9,9 +9,6 @@ namespace CustomerCare
 {
 	public partial class App : Application
 	{
-		public static bool UseMockDataStore = true;
-		public static string AzureMobileAppUrl = "https://[CONFIGURE-THIS-URL].azurewebsites.net";
-
         public static PublicClientApplication PCA = null;
         public static string ClientID = "105c8c48-4977-4c63-974e-82424cb3539c";
         public static string[] Scopes = {
@@ -29,11 +26,6 @@ namespace CustomerCare
         public App ()
 		{
 			InitializeComponent();
-
-			if (UseMockDataStore)
-				DependencyService.Register<MockDataStore>();
-			else
-				DependencyService.Register<AzureDataStore>();
 
             PCA = new PublicClientApplication(ClientID);
 
