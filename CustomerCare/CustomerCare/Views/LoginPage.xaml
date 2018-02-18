@@ -13,33 +13,23 @@
                   HorizontalOptions="FillAndExpand" 
                   RowSpacing="0"
                   Padding="20">
-                <Frame CornerRadius="10" 
-                       BackgroundColor="Black" 
-                       Padding="10"
-                       HorizontalOptions="FillAndExpand"
-                       Opacity="0.85">
-                    <StackLayout>
-                        <Label Text="Bem-Vindos ao Customer Care" 
-                               VerticalOptions="Center" 
-                               HorizontalOptions="FillAndExpand"
-                               FontSize="Medium"
-                               FontAttributes="Bold"
-                               TextColor="White" />
-                        <Frame CornerRadius="10" 
-                               BackgroundColor="#f0f0f0" 
-                               Padding="10" 
-                               Opacity="0.85"
-                               HorizontalOptions="FillAndExpand">
-                            <StackLayout Spacing="30">
-                                <Button BackgroundColor="#1ab394"
-                                        TextColor="White"
-                                        Text="Entrar"
-                                        HorizontalOptions="CenterAndExpand"
-                                        Command="{Binding LoginCommand}" />
-                            </StackLayout>
-                        </Frame>
-                    </StackLayout>
-                </Frame>
+                <StackLayout Spacing="50">
+                    <Label VerticalOptions="Center" 
+                        HorizontalOptions="CenterAndExpand"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        TextColor="White">
+                        <Label.Text>
+Bem-Vindos ao 
+Customer Care
+                        </Label.Text>
+                    </Label>
+                    <Button BackgroundColor="#D33149"
+                            TextColor="White"
+                            Text="Entrar"
+                            HorizontalOptions="CenterAndExpand"
+                            Command="{Binding LoginCommand}" />
+                </StackLayout>
             </Grid>
         </Grid>
     </ContentPage.Content>

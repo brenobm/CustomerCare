@@ -21,7 +21,11 @@ namespace CustomerCare.ViewModels
         {
             if (await authServer.Login())
             {
-                await MessageService.ShowAsync("Sucesso!", "Usuario autenticado com sucesso!");
+                ChangeMainPage<MainViewModel>(null);
+            }
+            else
+            {
+                await MessageService.ShowAsync("Atenção!", "Usuário / senha fornecidos incorretos!");
             }
         }
 
