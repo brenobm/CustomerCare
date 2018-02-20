@@ -29,7 +29,29 @@ namespace CustomerCare
 
             PCA = new PublicClientApplication(ClientID);
 
-            MainPage = new LoginPage();
+            IUser usr = App.Current.Properties["user"] as IUser;
+
+            Page mainPage = null;
+
+            if (usr != null)
+            {
+                IAuthenticationService authenticationService = DependencyService.Get<IAuthenticationService>();
+
+                if (authenticationService.LoginSilent(usr).Result)
+                {
+                    mainPage = new MainPage();
+                }
+                else
+                {
+                    mainPage = new LoginPage();
+                }
+            }
+            else
+            {
+                mainPage = new LoginPage();
+            }
+
+            MainPage = mainPage;
         }
 
 		protected override void OnStart ()
