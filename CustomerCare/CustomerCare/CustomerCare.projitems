@@ -29,10 +29,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\ExceptionHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\IMessageService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MessageService.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ObservableDictionary.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\RESTHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Attendee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Event.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\EventsByDate.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\AuthenticationService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\CalendarService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IAuthenticationService.cs" />

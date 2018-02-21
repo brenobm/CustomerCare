@@ -3,7 +3,6 @@ using CustomerCare.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 using Xamarin.Forms;
 
 namespace CustomerCare.ViewModels
@@ -12,26 +11,26 @@ namespace CustomerCare.ViewModels
     {
         private ICalendarService calendarService;
 
-        public ObservableDictionary<DateTime, Models.Event> Events { get; set; }
+        public ObservableCollection<Models.EventsByDate> EventsByDate { get; set; }
 
         public HomeViewModel()
         {
             calendarService = DependencyService.Get<ICalendarService>();
 
-            Events = new ObservableCollection<Models.Event>();
+            EventsByDate = new ObservableCollection<Models.EventsByDate>();
 
             Initialize();
         }
 
         private async void Initialize()
         {
-            var events = await calendarService.ListEvents();
+            var events = await calendarService.GetEventsByDay();
 
-            Events.;
+            EventsByDate.Clear();
 
             foreach(var e in events)
             {
-                Events.Add(e);
+                EventsByDate.Add(e);
             }
         }
     }

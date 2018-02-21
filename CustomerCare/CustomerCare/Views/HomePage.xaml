@@ -4,18 +4,80 @@
              x:Class="CustomerCare.Views.HomePage"
              Title="Detail">
   <StackLayout Padding="10">
-        <ListView ItemsSource="{Binding Events}">
+        <ListView ItemsSource="{Binding EventsByDate}" HasUnevenRows="True" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Orientation="Vertical">
-                            <Label Text="{Binding Title}" />
-                            <Label Text="{Binding Body}" />
-                            <Label Text="{Binding AttendeesList}" />
+                        <StackLayout Orientation="Horizontal"  VerticalOptions="CenterAndExpand">
+                            <Frame CornerRadius="10" 
+                               BackgroundColor="#F5F5DC" 
+                               Padding="10"
+                               HorizontalOptions="FillAndExpand"
+                               Opacity="0.85">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="2" />
+                                        <ColumnDefinition Width="4*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Label Text="{Binding Date, StringFormat='{0:dd}'}" 
+                                           VerticalOptions="Fill" 
+                                           HorizontalOptions="Fill"
+                                           VerticalTextAlignment="End" 
+                                           HorizontalTextAlignment="Center"
+                                           FontSize="Large" 
+                                           FontAttributes="Bold" 
+                                           TextColor="Red"  
+                                           Grid.Row="0" 
+                                           Grid.Column="0" />
+                                    <Label Text="{Binding Date, StringFormat='{0:MMM}'}" 
+                                           VerticalOptions="Fill"
+                                           HorizontalOptions="Fill"
+                                           VerticalTextAlignment="Start"
+                                           HorizontalTextAlignment="Center"
+                                           FontSize="Large"
+                                           FontAttributes="Bold"
+                                           TextColor="Red"
+                                           Grid.Row="1" 
+                                           Grid.Column="0" />
+                                    
+                                    <BoxView HeightRequest="100" 
+                                             WidthRequest="1" 
+                                             BackgroundColor="Black"
+                                             Grid.Row="0" 
+                                             Grid.RowSpan="2"
+                                             Grid.Column="1"/>
+                                    
+                                    <ListView ItemsSource="{Binding Events}" 
+                                              HasUnevenRows="True"
+                                              Grid.Row="0"
+                                              Grid.RowSpan="2"
+                                              Grid.Column="2"
+                                              VerticalOptions="CenterAndExpand"
+                                              HeightRequest="{Binding HeightEvents}">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <ViewCell>
+                                                    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+                                                        <Label Text="{Binding Title}" FontAttributes="Bold" LineBreakMode="TailTruncation" />
+                                                        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                                            <Label Text="{Binding Start, StringFormat='{0:HH:mm}'}" TextColor="#cccccc" />
+                                                            <Label Text="{Binding DurationFormated}" TextColor="#cccccc" />
+                                                        </StackLayout>
+                                                    </StackLayout>
+                                                </ViewCell>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                </Grid>
+                            </Frame>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-  </StackLayout>
+    </StackLayout>
 </ContentPage>

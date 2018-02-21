@@ -29,7 +29,9 @@ namespace CustomerCare
 
             PCA = new PublicClientApplication(ClientID);
 
-            IUser usr = App.Current.Properties["user"] as IUser;
+            IUser usr = null;
+            if (App.Current.Properties.ContainsKey("user"))
+                usr = App.Current.Properties["user"] as IUser;
 
             Page mainPage = null;
 

@@ -7,7 +7,6 @@ namespace CustomerCare.Services
 {
     public interface ICalendarService
     {
-        Task<Dictionary<DateTime, IList<Models.Event>>> GetEventsByDay();
-        Task<IList<Models.Event>> ListEvents();
+        Task<IEnumerable<Models.EventsByDate>> GetEventsByDay();
     }
 }
