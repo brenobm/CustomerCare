@@ -1,4 +1,5 @@
-﻿using CustomerCare.Services;
+﻿using CustomerCare.Helpers;
+using CustomerCare.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,7 +12,7 @@ namespace CustomerCare.ViewModels
     {
         private ICalendarService calendarService;
 
-        public ObservableCollection<Models.Event> Events { get; set; }
+        public ObservableDictionary<DateTime, Models.Event> Events { get; set; }
 
         public HomeViewModel()
         {
@@ -24,9 +25,9 @@ namespace CustomerCare.ViewModels
 
         private async void Initialize()
         {
-            var events = await calendarService.TestIntegration();
+            var events = await calendarService.ListEvents();
 
-            Events.Clear();
+            Events.;
 
             foreach(var e in events)
             {

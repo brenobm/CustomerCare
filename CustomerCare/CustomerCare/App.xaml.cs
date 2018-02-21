@@ -37,7 +37,7 @@ namespace CustomerCare
             {
                 IAuthenticationService authenticationService = DependencyService.Get<IAuthenticationService>();
 
-                if (authenticationService.LoginSilent(usr).Result)
+                if (authenticationService.LoginSilent(usr).Result != null)
                 {
                     mainPage = new MainPage();
                 }

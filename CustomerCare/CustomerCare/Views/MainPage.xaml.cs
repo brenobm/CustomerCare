@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomerCare.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,14 @@ namespace CustomerCare.Views
             var item = e.SelectedItem as MasterPageMenuItem;
             if (item == null)
                 return;
+
+            if (item.TargetType == typeof(LogoutMenu))
+            {
+                var viewModel = BindingContext as MainViewModel;
+                viewModel?.LogoutCommand?.Execute(null);
+
+                return;
+            }
 
             var page = (Page)Activator.CreateInstance(item.TargetType);
             page.Title = item.Title;

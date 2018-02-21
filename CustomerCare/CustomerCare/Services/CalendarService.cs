@@ -12,14 +12,30 @@ namespace CustomerCare.Services
 {
     public class CalendarService : ICalendarService
     {
-        public async Task<IList<Models.Event>> TestIntegration()
+        private IAuthenticationService authenticationService;
+
+        public CalendarService()
+        {
+            authenticationService = DependencyService.Get<IAuthenticationService>();
+        }
+
+        public async Task<Dictionary<DateTime, IList<Models.Event>>> GetEventsByDay()
+        {
+            var events = await ListEvents();
+            
+            var eventsGrouped = events.GroupBy(e => e.TimeEvent.Date).ToList();
+
+            return eventsGrouped.ToDictionary(kvp => kvp.Key, kvp => kvp.ToList() as IList<Models.Event>);
+        }
+
+        private async Task<IList<Models.Event>> ListEvents()
         {
             var client = new GraphServiceClient ("https://graph.microsoft.com/v1.0",
                   new DelegateAuthenticationProvider(
                   async(requestMessage) =>
             {
-                var tokenRequest = await App.PCA.AcquireTokenSilentAsync(App.Scopes, App.PCA.Users.FirstOrDefault());
-                requestMessage.Headers.Authorization = new AuthenticationHeaderValue("bearer", tokenRequest.AccessToken);
+                var tokenRequest = await authenticationService.LoginSilent(App.PCA.Users.FirstOrDefault());
+                requestMessage.Headers.Authorization = new AuthenticationHeaderValue("bearer", tokenRequest);
             }));
 
             IList<Option> options = new List<Option>();
@@ -29,8 +45,9 @@ namespace CustomerCare.Services
             options.Add(startDate);
 
             var remoteEvents = await client.Me.Events.Request(options).GetAsync();
-            var list = remoteEvents.ToList();
 
+            var list = remoteEvents.ToList();
+                        
             IList<Models.Event> events = new List<Models.Event>();
 
             foreach(var ev in list)

@@ -14,6 +14,8 @@ namespace CustomerCare.Models
         public string Title { get; set; }
         public string Body { get; set; }
         public IList<Attendee> Attendees { get; set; }
+        public DateTime TimeEvent { get; set; }
+
         public string AttendeesList
         {
             get

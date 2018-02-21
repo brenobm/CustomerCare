@@ -25,9 +25,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Converters\DecimalConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\IntegerConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\ItemTappedCnverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ConstantsHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\ExceptionHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\IMessageService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MessageService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ObservableDictionary.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\RESTHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Attendee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Event.cs" />
@@ -45,7 +47,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\HomeViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\IValidableViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LogoutMenu.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MenuViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ViewModelBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>

@@ -24,9 +24,14 @@
           <Label
               Grid.Column="1"
               Grid.Row="2"
-              Text="AppName"
+              Text="Customer Care"
               Style="{DynamicResource SubtitleStyle}"/>
-        </Grid>
+          <Label
+              Grid.Column="1"
+              Grid.Row="3"
+              Text="{Binding UserName}"
+              Style="{DynamicResource SubtitleStyle}"/>
+                </Grid>
       </ListView.Header>
       <ListView.ItemTemplate>
         <DataTemplate>

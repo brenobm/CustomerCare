@@ -7,6 +7,7 @@ namespace CustomerCare.Services
 {
     public interface ICalendarService
     {
-        Task<IList<Models.Event>> TestIntegration();
+        Task<Dictionary<DateTime, IList<Models.Event>>> GetEventsByDay();
+        Task<IList<Models.Event>> ListEvents();
     }
 }
