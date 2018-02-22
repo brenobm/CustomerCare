@@ -23,7 +23,8 @@ namespace CustomerCare.ViewModels
         {
             MenuItems = new ObservableCollection<MasterPageMenuItem>(new[]
                 {
-                    new MasterPageMenuItem { Id = 0, Title = "Sair", TargetType = typeof(LogoutMenu) },
+                    new MasterPageMenuItem { Id = 0, Title = "Clientes", TargetType = typeof(ClientsPage) },
+                    new MasterPageMenuItem { Id = 1, Title = "Sair", TargetType = typeof(LogoutMenu) },
                 });
         }
     }

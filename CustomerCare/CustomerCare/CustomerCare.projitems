@@ -31,6 +31,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MessageService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\RESTHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Attendee.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ClientsDomain\Client.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ClientsDomain\ClientArea.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ClientsDomain\ClientProjects.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ClientsDomain\Employee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Event.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\EventsByDate.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\AuthenticationService.cs" />
@@ -44,13 +48,18 @@
     <Compile Include="$(MSBuildThisFileDirectory)Validations\IValidationRule.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Validations\IValidity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Validations\ValidatableObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ClientsViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\HomeViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\IValidableViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LogoutMenu.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MenuViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\NewClientViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ViewModelBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ClientsPage.xaml.cs">
+      <DependentUpon>ClientsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
@@ -66,6 +75,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\MasterPageMenuItem.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\NewClientPage.xaml.cs">
+      <DependentUpon>NewClientPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\LoginPage.xaml">
@@ -78,6 +90,12 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\MenuPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ClientsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\NewClientPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

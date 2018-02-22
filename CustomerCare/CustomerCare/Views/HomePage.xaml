@@ -4,7 +4,7 @@
              x:Class="CustomerCare.Views.HomePage"
              Title="Detail">
   <StackLayout Padding="10">
-        <ListView ItemsSource="{Binding EventsByDate}" HasUnevenRows="True" >
+        <ListView ItemsSource="{Binding EventsByDate}" HasUnevenRows="True" CachingStrategy="RecycleElement">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -24,7 +24,7 @@
                                         <RowDefinition Height="Auto" />
                                     </Grid.RowDefinitions>
                                     <Label Text="{Binding Date, StringFormat='{0:dd}'}" 
-                                           VerticalOptions="Fill" 
+                                           VerticalOptions="End" 
                                            HorizontalOptions="Fill"
                                            VerticalTextAlignment="End" 
                                            HorizontalTextAlignment="Center"
@@ -34,7 +34,7 @@
                                            Grid.Row="0" 
                                            Grid.Column="0" />
                                     <Label Text="{Binding Date, StringFormat='{0:MMM}'}" 
-                                           VerticalOptions="Fill"
+                                           VerticalOptions="Start"
                                            HorizontalOptions="Fill"
                                            VerticalTextAlignment="Start"
                                            HorizontalTextAlignment="Center"

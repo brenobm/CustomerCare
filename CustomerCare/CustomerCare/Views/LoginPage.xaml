@@ -13,7 +13,7 @@
                   HorizontalOptions="FillAndExpand" 
                   RowSpacing="0"
                   Padding="20">
-                <StackLayout Spacing="50">
+                <StackLayout Spacing="80">
                     <Label VerticalOptions="Center" 
                         HorizontalOptions="CenterAndExpand"
                         FontSize="Large"
@@ -24,7 +24,7 @@ Bem-Vindos ao
 Customer Care
                         </Label.Text>
                     </Label>
-                    <Button BackgroundColor="#D33149"
+                    <Button BackgroundColor="{DynamicResource Key='Red'}"
                             TextColor="White"
                             Text="Entrar"
                             HorizontalOptions="CenterAndExpand"
