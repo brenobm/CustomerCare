@@ -29,24 +29,13 @@ namespace CustomerCare
 
             PCA = new PublicClientApplication(ClientID);
 
-            IUser usr = null;
-            if (App.Current.Properties.ContainsKey("user"))
-                usr = App.Current.Properties["user"] as IUser;
+            IAuthenticationService authenticationService = DependencyService.Get<IAuthenticationService>();
 
             Page mainPage = null;
 
-            if (usr != null)
+            if (authenticationService.CurrentLogged().Result)
             {
-                IAuthenticationService authenticationService = DependencyService.Get<IAuthenticationService>();
-
-                if (authenticationService.LoginSilent(usr).Result != null)
-                {
-                    mainPage = new MainPage();
-                }
-                else
-                {
-                    mainPage = new LoginPage();
-                }
+                mainPage = new MainPage();
             }
             else
             {

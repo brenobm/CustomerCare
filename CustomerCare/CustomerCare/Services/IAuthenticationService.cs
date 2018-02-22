@@ -9,7 +9,9 @@ namespace CustomerCare.Services
     public interface IAuthenticationService
     {
         Task<bool> Login();
-        Task<string> LoginSilent(IUser user);
-        Task<bool> Logout();
+        Task<string> GetCurrentToken(IUser user);
+        bool Logout();
+        Task<bool> CurrentLogged();
+        Task<bool> LoginSilent(IUser user);
     }
 }

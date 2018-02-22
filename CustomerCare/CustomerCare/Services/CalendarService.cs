@@ -40,7 +40,7 @@ namespace CustomerCare.Services
                       new DelegateAuthenticationProvider(
                       async (requestMessage) =>
                 {
-                    var tokenRequest = await authenticationService.LoginSilent(App.PCA.Users.FirstOrDefault());
+                    var tokenRequest = await authenticationService.GetCurrentToken(App.PCA.Users.FirstOrDefault());
                     requestMessage.Headers.Authorization = new AuthenticationHeaderValue("bearer", tokenRequest);
                 }));
 
