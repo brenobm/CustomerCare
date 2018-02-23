@@ -1,6 +1,7 @@
 ﻿using CustomerCare.Config;
 using CustomerCare.Models;
 using SQLite.Net;
+using Mono.Data.Sqlite;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -13,7 +14,13 @@ namespace CustomerCare.DataLayer
     {
         private SQLiteConnection _connection;
 
-        public SQLiteConnection Connection { get; }
+        public SQLiteConnection Connection
+        {
+            get
+            {
+                return _connection;
+            }
+        }
 
         public CustomerCareContext()
         {

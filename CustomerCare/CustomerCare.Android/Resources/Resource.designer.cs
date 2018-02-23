@@ -1451,6 +1451,8 @@ namespace CustomerCare.Droid
 			global::Microsoft.Identity.Client.Resource.Styleable.ViewStubCompat_android_layout = global::CustomerCare.Droid.Resource.Styleable.ViewStubCompat_android_layout;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::CustomerCare.Droid.Resource.String.ApplicationName;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::CustomerCare.Droid.Resource.String.Hello;
+			global::SQLite.Net.Platform.XamarinAndroidN.Resource.String.ApplicationName = global::CustomerCare.Droid.Resource.String.ApplicationName;
+			global::SQLite.Net.Platform.XamarinAndroidN.Resource.String.Hello = global::CustomerCare.Droid.Resource.String.Hello;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::CustomerCare.Droid.Resource.Attribute.actionBarSize;
 		}
 		

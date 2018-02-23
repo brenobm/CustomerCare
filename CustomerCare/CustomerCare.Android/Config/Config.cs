@@ -33,7 +33,7 @@ namespace CustomerCare.Droid.Config
             {
                 if (_platform == null)
                 {
-                    _platform = new SQLite.Net.Platform.XamarinAndroid.SQLitePlatformAndroid();
+                    _platform = new SQLite.Net.Platform.XamarinAndroid.SQLitePlatformAndroidN();
                 }
 
                 return _platform;

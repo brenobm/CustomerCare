@@ -26,6 +26,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <BundleAssemblies>false</BundleAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,6 +42,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
+    <Reference Include="SQLite.Net.Platform.XamarinAndroidN, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\SQLite.Net.Platform.XamarinAndroidN.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -51,7 +58,13 @@
     <PackageReference Include="Microsoft.Identity.Client">
       <Version>1.1.2-preview0008</Version>
     </PackageReference>
+    <PackageReference Include="Mono.Data.Sqlite.Portable">
+      <Version>1.0.3.5</Version>
+    </PackageReference>
     <PackageReference Include="SQLite.Net-PCL">
+      <Version>3.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="SQLite.Net.Core-PCL">
       <Version>3.1.1</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.CustomTabs">
@@ -154,6 +167,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\cc_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SQLite.Net.Platform.XamarinAndroidN.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="..\CustomerCare\CustomerCare.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
