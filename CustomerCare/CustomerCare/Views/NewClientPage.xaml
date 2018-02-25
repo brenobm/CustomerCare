@@ -1,10 +1,21 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CustomerCare.Views.NewClientPage">
+             x:Class="CustomerCare.Views.NewClientPage"
+             xmlns:Custom="clr-namespace:CustomerCare.Controls"
+             xmlns:Converters="clr-namespace:CustomerCare.Converters"
+             Title="{Binding Title}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converters:DecimalConverter x:Key="decimalConverter" />
+            <Converters:IntegerConverter x:Key="integerConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>    
     <ContentPage.Content>
-      <StackLayout>
-          <Label Text="Hello Xamarin.Forms!" />
-      </StackLayout>
+        <ScrollView>
+            <StackLayout Padding="10">
+                <Label Text="Hello Xamarin.Forms!" />
+            </StackLayout>
+        </ScrollView>
   </ContentPage.Content>
 </ContentPage>

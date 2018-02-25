@@ -20,7 +20,6 @@ namespace CustomerCare.ViewModels
 
             NewClientCommand = new Command(async () => await NewClientCommandExecute());
 
-
             Initializer();
         }
 

@@ -47,6 +47,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\ModelBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\AuthenticationService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\CalendarService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\DataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IAuthenticationService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\ICalendarService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IDataStore.cs" />
