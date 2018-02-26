@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CustomerCare.Models.ClientsDomain
 {
-    public class Client
+    public class Client: ModelBase
     {
         public string Name { get; set; }
         

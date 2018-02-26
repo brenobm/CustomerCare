@@ -27,7 +27,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Converters\ItemTappedCnverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataLayer\CustomerCareContext.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataLayer\Repositories\AuthenticationRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataLayer\Repositories\ClientRepository.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataLayer\Repositories\IAuthenticationRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataLayer\Repositories\IClientRepository.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataLayer\Repositories\IRepositoryBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataLayer\Repositories\RepositoryBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataLayer\UnitOfWork.cs" />
@@ -47,6 +49,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\ModelBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\AuthenticationService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\CalendarService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ClientDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\DataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IAuthenticationService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\ICalendarService.cs" />

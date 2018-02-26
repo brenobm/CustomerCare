@@ -10,6 +10,8 @@ namespace CustomerCare.DataLayer
 
         public IAuthenticationRepository Authentication { get; set; }
 
+        public IClientRepository Client { get; set; }
+
         public UnitOfWork()
         {
             _context = DependencyService.Get<CustomerCareContext>();

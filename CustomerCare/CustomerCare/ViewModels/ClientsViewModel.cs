@@ -1,4 +1,5 @@
 ﻿using CustomerCare.Models.ClientsDomain;
+using CustomerCare.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,6 +11,8 @@ namespace CustomerCare.ViewModels
 {
     public class ClientsViewModel: ViewModelBase
     {
+        private IDataStore<Client> _clientDS;
+
         public ObservableCollection<Client> Clients { get; set; }
 
         public Command NewClientCommand { get; set; }
@@ -19,6 +22,8 @@ namespace CustomerCare.ViewModels
             Clients = new ObservableCollection<Client>();
 
             NewClientCommand = new Command(async () => await NewClientCommandExecute());
+
+            _clientDS = DependencyService.Get<IDataStore<Client>>();
 
             Initializer();
         }
@@ -30,10 +35,14 @@ namespace CustomerCare.ViewModels
 
         private void Initializer()
         {
-            Clients.Add(new Client { Name = "MRV" });
-            Clients.Add(new Client { Name = "CEMIG" });
-            Clients.Add(new Client { Name = "CRC" });
-            Clients.Add(new Client { Name = "ProAuto" });
+            var clients = _clientDS.ListAll();
+
+            Clients.Clear();
+
+            foreach(var client in clients)
+            {
+                Clients.Add(client);
+            }
         }
     }
 }

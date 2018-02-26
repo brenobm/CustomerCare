@@ -14,7 +14,16 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="10">
-                <Label Text="Hello Xamarin.Forms!" />
+                <Label Text="Nome do Cliente"/>
+                <Custom:ValidableEntry Text="{Binding Name.Value}"
+                    Valid="{Binding Name.IsValid}" />
+                
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Salvar" Command="{Binding CadastreCommand}" BackgroundColor="#1c84c6" TextColor="White" HorizontalOptions="CenterAndExpand"/>
+                    <Button Text="Limpar" Command="{Binding ClearFieldsCommand}" BackgroundColor="#c2c2c2" TextColor="White" HorizontalOptions="CenterAndExpand" IsVisible="{Binding Cadastring}"/>
+                    <Button Text="Excluir" Command="{Binding DeleteCommand}" BackgroundColor="#e45167" TextColor="White" HorizontalOptions="CenterAndExpand" IsVisible="{Binding Editing}"/>
+                    <Button Text="Voltar" Command="{Binding BackCommand}" BackgroundColor="#c2c2c2" TextColor="White" HorizontalOptions="CenterAndExpand" IsVisible="{Binding Editing}"/>
+                </StackLayout>
             </StackLayout>
         </ScrollView>
   </ContentPage.Content>

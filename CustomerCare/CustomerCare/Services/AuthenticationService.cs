@@ -1,6 +1,7 @@
 ﻿using CustomerCare.DataLayer;
 using CustomerCare.Models;
 using Microsoft.Identity.Client;
+using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -69,7 +70,8 @@ namespace CustomerCare.Services
 
                 return true;
             }
-            catch (MsalException ex)
+            //catch (MsalException ex)
+            catch (Exception ex)
             {
                 StackTrace st = new StackTrace();
                 StackFrame sf = st.GetFrame(1);
